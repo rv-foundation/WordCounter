@@ -36,7 +36,10 @@ For example, to add a new migration from the root folder:
 
  `dotnet ef database update --project src\Common\WordCounter.Infrastructure  --startup-project src\Apps\WordCounter`
 
-If you getting Command dotnet ef not found error message then run: dotnet tool install --global dotnet-ef and try again for migration
+If you getting Command dotnet ef not found error message then run: 
+```json 
+dotnet tool install --global dotnet-ef and try again for migration
+```
 
 ## Overview
 
