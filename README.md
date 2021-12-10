@@ -1,10 +1,11 @@
   # WordCounter API with Clean Architecture
 
 ## Getting Started
-1. Navigate to `src/Apps/WordCounter` and run `dotnet run` to launch the back end (ASP.NET Core Web API)
-2. Open web browser https://localhost:44372/swagger Swagger UI
-3. Navigate to "api/login" and Pass Request Param Email = `raghav@test.com` and Password = `Raghav@123` after that copy token
-4. Nagigate to Authorize page and add validation token with `Bearer [token]`
+1. Install the latest or [.NET SDK 3.1.X](https://dotnet.microsoft.com/en-us/download/dotnet/3.1)
+2. Navigate to `src/Apps/WordCounter` and run `dotnet run` to launch the back end (ASP.NET Core Web API)
+3. Open web browser https://localhost:44372/swagger Swagger UI
+4. Navigate to "api/login" and Pass Request Param Email = `raghav@test.com` and Password = `Raghav@123` after that copy token
+5. Nagigate to Authorize page and add validation token with `Bearer [token]`
 Example : `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9`
 
 
