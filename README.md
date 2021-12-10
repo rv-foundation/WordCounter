@@ -57,7 +57,7 @@ This layer contains classes for accessing external resources such as file system
 
 ### Api
 
-This layer is a web api application based on ASP.NET 3.1.x. This layer depends on both the Application and Infrastructure layers, however, the dependency on Infrastructure is only to support dependency injection. Therefore only *Startup.cs* should reference Infrastructure.
+This layer is a web api application based on .NET Core 3.1.x. This layer depends on both the Application and Infrastructure layers, however, the dependency on Infrastructure is only to support dependency injection. Therefore only *Startup.cs* should reference Infrastructure.
 
 ### Logs
 
