@@ -14,7 +14,7 @@ namespace WordCounter.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddSingleton(GetConfiguredMappingConfig());
-            services.AddScoped<IMapper, ServiceMapper>();
+            services.AddSingleton<IMapper, ServiceMapper>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());

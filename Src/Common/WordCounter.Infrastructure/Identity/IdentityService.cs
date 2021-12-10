@@ -15,9 +15,8 @@ namespace WordCounter.Infrastructure.Identity
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IMapper _mapper;
 
-        public IdentityService(UserManager<ApplicationUser> userManager, IMapper mapper) {
+        public IdentityService(UserManager<ApplicationUser> userManager) {
             _userManager = userManager;
-            _mapper = mapper;
         }
 
         public async Task<string> GetUserNameAsync(string userId) {

@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using WordCounter.Application.Common.Extensions;
 using WordCounter.Application.Common.Interfaces;
 using WordCounter.Application.Common.Models;
 using WordCounter.Application.Dto;
@@ -32,7 +33,7 @@ namespace WordCounter.Application.Words.Queries
         public async Task<ServiceResult<List<WordDto>>> Handle(GetWordsWithFrequencyByUrlQuery request, CancellationToken cancellationToken)
         {
             WebClient webClient = new WebClient();
-            byte[] reqHTML = webClient.DownloadData(request.Url);
+            byte[] reqHTML = webClient.DownloadData(request.Url.DecodeUrlString());
 
             UTF8Encoding objUTF8 = new UTF8Encoding();
             string pageContentWithHtmlTags = objUTF8.GetString(reqHTML);
