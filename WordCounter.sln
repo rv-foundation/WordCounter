@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter.Api", "WordCounter\WordCounter.Api.csproj", "{821060BC-7FC8-4B60-91BB-DC4F738A8F03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{8B12EAFC-9E7A-42E7-A021-0C1594452622}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{4C0CED0D-2030-4BEB-AD13-29C6825ECC56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{DDA77D6C-F032-433F-A5A2-0EB75E53F9D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A4679106-3047-4C38-93E7-CA62F10E5CCF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{FD5CB636-722A-451F-8B39-4060A54B0FAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{821060BC-7FC8-4B60-91BB-DC4F738A8F03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821060BC-7FC8-4B60-91BB-DC4F738A8F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{821060BC-7FC8-4B60-91BB-DC4F738A8F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{821060BC-7FC8-4B60-91BB-DC4F738A8F03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{821060BC-7FC8-4B60-91BB-DC4F738A8F03} = {4C0CED0D-2030-4BEB-AD13-29C6825ECC56}
+		{4C0CED0D-2030-4BEB-AD13-29C6825ECC56} = {8B12EAFC-9E7A-42E7-A021-0C1594452622}
+		{DDA77D6C-F032-433F-A5A2-0EB75E53F9D2} = {8B12EAFC-9E7A-42E7-A021-0C1594452622}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7BDD8F3-62C0-4759-84C6-98FA1556D075}
+	EndGlobalSection
+EndGlobal
