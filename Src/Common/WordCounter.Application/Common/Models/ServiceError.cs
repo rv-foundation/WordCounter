@@ -56,7 +56,19 @@ namespace WordCounter.Application.Common.Models
         {
             return new ServiceError(errorMessage, 997);
         }
+        public static ServiceError UserNotFound => new ServiceError("User with this id does not exist", 996);
+
+        public static ServiceError UserFailedToCreate => new ServiceError("Failed to create User.", 995);
+
+        public static ServiceError Canceled => new ServiceError("The request canceled successfully!", 994);
+
         public static ServiceError NotFound => new ServiceError("The specified resource was not found.", 990);
+
+        public static ServiceError ValidationFormat => new ServiceError("Request object format is not true.", 901);
+
+        public static ServiceError Validation => new ServiceError("One or more validation errors occurred.", 900);
+
+        public static ServiceError SearchAtLeastOneCharacter => new ServiceError("Search parameter must have at least one character!", 898);
 
         /// <summary>
         /// Default error for when we receive an exception
