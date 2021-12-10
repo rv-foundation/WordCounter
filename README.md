@@ -38,7 +38,7 @@ For example, to add a new migration from the root folder:
 
 If you getting Command dotnet ef not found error message then run: 
 ```json 
-dotnet tool install --global dotnet-ef and try again for migration
+dotnet tool install --global dotnet-ef
 ```
 
 ## Overview
