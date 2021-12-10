@@ -42,8 +42,7 @@ namespace WordCounter
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
-                    //await ApplicationDbContextSeed.SeedDefaultUserAsync(userManager, roleManager);
-                    //await ApplicationDbContextSeed.SeedSampleWordDataAsync(context);
+                    await ApplicationDbContextSeed.SeedDefaultUserAsync(userManager, roleManager);
                 }
                 catch (Exception ex)
                 {

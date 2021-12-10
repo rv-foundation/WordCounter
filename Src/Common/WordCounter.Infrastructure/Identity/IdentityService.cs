@@ -35,7 +35,7 @@ namespace WordCounter.Infrastructure.Identity
 
             if (user != null && await _userManager.CheckPasswordAsync(user, password))
             {
-                return _mapper.Map<ApplicationUserDto>(user);
+                return new ApplicationUserDto { Email = user.Email, Id = user.Id, UserName = user.UserName };
             }
 
             return null;
