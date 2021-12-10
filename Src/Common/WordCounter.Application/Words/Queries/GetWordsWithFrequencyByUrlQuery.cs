@@ -1,7 +1,6 @@
-﻿using Mapster;
-using MapsterMapper;
-using Microsoft.EntityFrameworkCore;
+﻿using MediatR;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -11,6 +10,7 @@ using WordCounter.Application.Common.Extensions;
 using WordCounter.Application.Common.Interfaces;
 using WordCounter.Application.Common.Models;
 using WordCounter.Application.Dto;
+using WordCounter.Application.Words.Commands;
 
 namespace WordCounter.Application.Words.Queries
 {
@@ -21,13 +21,11 @@ namespace WordCounter.Application.Words.Queries
 
     public class GetWordsWithFrequencyByUrlQueryHandler : IRequestHandlerWrapper<GetWordsWithFrequencyByUrlQuery, List<WordDto>>
     {
-        private readonly IApplicationDbContext _context;
-        private readonly IMapper _mapper;
+        private ISender _mediator;
 
-        public GetWordsWithFrequencyByUrlQueryHandler(IApplicationDbContext context, IMapper mapper)
+        public GetWordsWithFrequencyByUrlQueryHandler(ISender mediator)
         {
-            _context = context;
-            _mapper = mapper;
+            _mediator = mediator;
         }
 
         public async Task<ServiceResult<List<WordDto>>> Handle(GetWordsWithFrequencyByUrlQuery request, CancellationToken cancellationToken)
@@ -43,6 +41,16 @@ namespace WordCounter.Application.Words.Queries
             if (!string.IsNullOrEmpty(pageContent))
             {
                 list = CountWordFrequency(pageContent);
+
+                list.Take(100).ToList().ForEach(word =>
+                {
+                    try
+                    {
+                        _mediator.Send(new UpsertWordCommand { Name = word.Name, Count = word.Count }, cancellationToken);
+                    }
+                    catch { }
+                   
+                });
             }
 
             return list != null ? ServiceResult.Success(list) : ServiceResult.Failed<List<WordDto>>(ServiceError.NotFound);

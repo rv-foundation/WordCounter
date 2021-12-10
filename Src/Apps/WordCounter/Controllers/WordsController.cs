@@ -12,8 +12,20 @@ namespace WordCounter.Api.Controllers
     [ApiController]
     public class WordsController : BaseApiController
     {
+
         /// <summary>
-        /// Create city
+        /// Get Top 100 Most Frequent Words
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<ActionResult<ServiceResult<WordDto>>> GetMostFrequentWords(CancellationToken cancellationToken) {
+            //Cancellation token example.
+            return Ok(await Mediator.Send(new GetMostFrequentWordsQuery(), cancellationToken));
+        }
+
+        /// <summary>
+        /// Fetch Words from URL
         /// </summary>
         /// <param name="url"></param>
         /// <param name="cancellationToken"></param>

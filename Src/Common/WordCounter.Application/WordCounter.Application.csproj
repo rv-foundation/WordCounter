@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Words\Commands\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="9.5.4" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="9.5.4" />
     <PackageReference Include="Mapster" Version="7.2.0" />
