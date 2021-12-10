@@ -6,7 +6,16 @@
 
   <ItemGroup>
     <Folder Include="Words\Commands\" />
-    <Folder Include="Words\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.2.0" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\WordCounter.Domain\WordCounter.Domain.csproj" />
   </ItemGroup>
 
 </Project>

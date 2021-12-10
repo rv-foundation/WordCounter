@@ -16,4 +16,8 @@
     <Folder Include="Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\WordCounter.Application\WordCounter.Application.csproj" />
+  </ItemGroup>
+
 </Project>
